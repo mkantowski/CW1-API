@@ -1,6 +1,9 @@
 import requests
 
-BASE = "http://127.0.0.1:5000"
-
-response = requests.get(BASE + "hello")
-print(response.json())
+BASE = "http://numberapi.com"
+k = ""
+response = requests.get(BASE + "/2/6?json")
+data = response.json()
+for info in data["text"]:
+    k = k + info
+print(k)
